@@ -1,6 +1,6 @@
 using System;
 
-namespace SailsWebMvc.Models
+namespace SailsWebMvc.Models.ViewModels
 {
     public class ErrorViewModel
     {
