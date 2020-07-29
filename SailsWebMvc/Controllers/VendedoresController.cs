@@ -41,7 +41,14 @@ namespace SalesWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Vendedor vendedor)
         {
+            if(!ModelState.IsValid)
+            {
+                var departments = _departmentService.FindAll();
+                var viewModel = new VendedorFormViewModel { Vendedor = vendedor, Departments = departments };
+                return View(viewModel);
+          
 
+            }
             _vendedorService.insert(vendedor);
             return RedirectToAction(nameof(Index));
         }
@@ -108,6 +115,15 @@ namespace SalesWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, Vendedor vendedor)
         {
+
+            if (!ModelState.IsValid)
+            {
+                var departments = _departmentService.FindAll();
+                var viewModel = new VendedorFormViewModel { Vendedor = vendedor, Departments = departments};
+                return View(viewModel);
+
+            }
+
             if (id != vendedor.Id)
             {
                 return RedirectToAction(nameof(Error), new { message = "Os IDS não correspondem" });

@@ -9,13 +9,21 @@ namespace SalesWebMvc.Models
     {
         //declaração de atributos
         public int Id { get; set; }
+        [Required(ErrorMessage = "{0} é obrigatório")]
+        [StringLength(60, MinimumLength =3, ErrorMessage = "{0} muito curto")]
         public string Nome { get; set; }
+
+        [Required(ErrorMessage = "{0} é obrigatório")]
         [Display(Name = "E-mail")]
         [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "Entre com um E-mail válido")]
         public string Email { get; set; }
         [Display(Name = "Salário")]
         [DisplayFormat(DataFormatString ="{0:F2}")]
+        [Required(ErrorMessage = "{0} é obrigatório")]
         public double SalarioBase { get; set; }
+
+        [Required(ErrorMessage = "{0} é obrigatório")]
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
