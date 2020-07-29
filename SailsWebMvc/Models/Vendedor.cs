@@ -7,14 +7,14 @@ namespace SalesWebMvc.Models
     public class Vendedor
     {
         //declaração de atributos
-        public int id { get; set; }
+        public int Id { get; set; }
         public string   Nome { get; set; }
         public string Email { get; set; }
         public double SalarioBase { get; set; }
         public DateTime DataNascimento { get; set; }
 
         public Department Department { get; set; }
-
+        public int DepartmentId { get; set; }
         public ICollection<RegistroDeVenda> Vendas { get; set; } = new List<RegistroDeVenda>();
 
         //metodos e construtor
@@ -25,7 +25,7 @@ namespace SalesWebMvc.Models
 
         public Vendedor(int id, string nome, string email, double salarioBase, DateTime dataNascimento, Department department)
         {
-            this.id = id;
+            this.Id = id;
             Nome = nome;
             Email = email;
             SalarioBase = salarioBase;
