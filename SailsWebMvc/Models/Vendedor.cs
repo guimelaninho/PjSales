@@ -28,7 +28,7 @@ namespace SalesWebMvc.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataNascimento { get; set; }
-
+        [Display(Name = "Departamento")]
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
         public ICollection<RegistroDeVenda> Vendas { get; set; } = new List<RegistroDeVenda>();

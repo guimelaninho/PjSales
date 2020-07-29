@@ -45,6 +45,7 @@ namespace SailsWebMvc
             services.AddScoped<SeedingService>();
             services.AddScoped<VendedorService>();
             services.AddScoped<DepartmentService>();
+            services.AddScoped<RegistroDeVendasService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

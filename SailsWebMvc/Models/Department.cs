@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
+
 namespace SalesWebMvc.Models
 {
     public class Department
     {
         //declaração de atributos
         public int Id { get; set; }
+        [Display(Name = "Departamento")]
         public string Name { get; set; }
 
         public ICollection<Vendedor> Vendedores { get; set; } = new List<Vendedor>();
